@@ -17,12 +17,14 @@
         height: 124px;
         background: transparent url('../assets/Grupo 18.svg') no-repeat center;
         opacity: 1;
-        margin-top: 83px;}
+        margin-top: 83px;
+    }
 
   @media (max-width: 500px) {
     .title{
         transform: scale(0.75);
         background-size: contain;
+        
     }
   }
 </style>

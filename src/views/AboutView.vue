@@ -7,7 +7,14 @@
   </div>
   <div class="row">
     <div class="col">
-        <p class="features">Salão interno com +0000 m²<br>Estacionamento amplo e de fácil acesso<br>Pista de dança<br>Espaço Bar & Lounge<br>Cozinha profissional<br>Ampla área ext</p>
+        <ul class="features">
+            <li>Salão interno com +0000 m²</li>
+            <li>Estacionamento amplo e de fácil acesso</li>
+            <li>Pista de dança</li>
+            <li>Espaço Bar & Lounge</li>
+            <li>Cozinha profissional</li>
+            <li>Ampla área externa</li>
+        </ul>
     </div>
   </div>
 </div>
@@ -29,12 +36,36 @@
     text-align: left;
     margin-left: 17%;
     margin-right: 5%;
-
     text-align: left;
     font: normal normal normal 20px/50px Roboto;
     letter-spacing: 0px;
     color: #242D21;
     opacity: 1;
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+  }
+
+    li {
+    border-bottom: 1px solid #ccc; /* Adicionar uma borda inferior com cor cinza claro */
+    padding: 10px 0; /* Adicionar um espaçamento interno para separar os itens */
+    }
+
+    li:last-child {
+    border-bottom: none; /* Remover a borda do último item */
+    }
+  
+  @media (max-width: 767px){
+    .about{
+        text-align: center;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+    .features{
+        text-align: center;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
   }
 
 </style>

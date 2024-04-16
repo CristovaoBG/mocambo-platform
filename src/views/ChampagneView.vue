@@ -1,13 +1,54 @@
 <template>
-    <div class="champagne"></div>
+    <div class="champagne">
+        <div class="container-fluid">
+            <div class="row justify-content-start" style="height:511px">
+                <div class="col-md-4 d-flex justify-content-center align-self-center">
+                    <div class="mstamp"></div>
+                </div>
+                <div class="address col-md-4 align-self-center">
+                    <p>Endereço:<br>SHIN Trecho 1 / Lago Norte, Brasília, DF<br>71560-100<br>de frente ao balão do Torto<br><br>Telefone: (61) 99811-2533</p>
+                    <p class="footn">©2024 – Mocambo Ltda. – Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <style scoped>
-  .champagne {
-    top: 1077px;
+p{        
+    color: var(--amarelo);
+}
+.champagne {
+    position: relative;
     height: 511px;
+    width: 100%;
     background: transparent url('../assets/Grupo 32.png') 0% 0% no-repeat padding-box;
     opacity: 1;
-    display: flex;
-  }
+    background-position: center;
+
+}
+
+.mstamp {
+    width: 159px;
+    height: 163px;
+    background: transparent url('../assets/Grupo 20.svg') center;
+    opacity: 1;
+}
+
+/* .footn{
+    position: absolute;
+    left: 50%;
+    top: 91%;
+} */
+
+@media (max-width: 767px){
+    .address{
+        align-self:baseline
+    }
+    .champagne {
+        height: 682px;
+        background-size: cover;
+    }
+}
+
 </style>
