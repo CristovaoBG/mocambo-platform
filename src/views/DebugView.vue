@@ -1,6 +1,6 @@
 <template>
-  <div style="position: relative">
-    <div style="position: absolute; background-color: var(--verde-escuro); width: 100%; height: 100px;"></div>
+  <div style="position: relative; margin-bottom: 0;" >
+    <div style="position: absolute; background-color: var(--verde-escuro); width: 100%; height: 143px;"></div>
     <carousel :items-to-show="itemsToShow">
       <slide v-for="(image) in images" :key="image">
         <div :class="{'imgcontainer': true}">
@@ -66,16 +66,14 @@ export default {
 }
 
  .carousel__slide {
-   scroll-snap-stop: auto;
-   flex-shrink: 0;
-   margin: 0px;
-   position: relative;
-   width: 100px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   /* Fix iOS scrolling #22 */
-   transform: translateZ(0);
-   transition: transform 0.5s ease; /* suaviza a animação */
+   transition: transform 0.5s ease;
  }
+
+ .carousel__pagination {
+    display: none; 
+}
+.carousel__track {
+  margin-bottom: 0 !important;
+}
+
 </style>
