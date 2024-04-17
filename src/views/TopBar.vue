@@ -7,7 +7,7 @@
 <style scoped>
     .topbar {
     width: 100%;
-    height: 426px;
+    height: 283px;
     background: var(--verde-escuro);
     opacity: 1;    
     display: flex;

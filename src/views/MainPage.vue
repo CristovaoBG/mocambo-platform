@@ -122,7 +122,7 @@ import AboutView from '../views/AboutView.vue'
 import EntranceView from '../views/EntranceView.vue'
 import ReserveView from '../views/ReserveView.vue'
 import ChampagneView from '../views/ChampagneView.vue'
-import GalleryView from '../views/GalleryView.vue'
+import GalleryView from '../views/DebugView.vue'
 
 export default {
   name: 'HelloWorld',
