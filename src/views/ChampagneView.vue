@@ -7,10 +7,11 @@
                 </div>
                 <div class="address col-md-4 align-self-center">
                     <p>Endereço:<br>SHIN Trecho 1 / Lago Norte, Brasília, DF<br>71560-100<br>de frente ao balão do Torto<br><br>Telefone: (61) 99811-2533</p>
-                    <p class="footn">©2024 – Mocambo Ltda. – Todos os direitos reservados.</p>
                 </div>
             </div>
         </div>
+        <p class="footn">©2024 – Mocambo Ltda. – Todos os direitos reservados.</p>
+
     </div>
 </template>
 
@@ -35,11 +36,14 @@ p{
     opacity: 1;
 }
 
-/* .footn{
+ .footn{
     position: absolute;
+    justify-self: center;
+    bottom: 3%;
+    transform: translateX(-50%);
     left: 50%;
-    top: 91%;
-} */
+    width: 60%;
+}
 
 @media (max-width: 767px){
     .address{

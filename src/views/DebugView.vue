@@ -7,26 +7,19 @@
           <img :src="image" :class="{'c-image': true, 'd-flex': true}">
         </div>
       </slide>
-      <template #addons>
-        <navigation />
-        <pagination />
-      </template>
     </carousel>
   </div>
 </template>
 
 <script>
-// If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
 import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import { Carousel, Slide } from 'vue3-carousel'
 import images from '@/utils/importImages';
 
 export default {
   components: {
     Carousel,
     Slide,
-    Pagination,
-    Navigation,
   },
   data() {
     return{
@@ -72,8 +65,14 @@ export default {
  .carousel__pagination {
     display: none; 
 }
+</style>
+
+<!-- global -->
+<style>
 .carousel__track {
-  margin-bottom: 0 !important;
+  margin-bottom: 0px;
 }
 
+
 </style>
+

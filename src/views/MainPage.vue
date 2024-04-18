@@ -58,7 +58,6 @@
     bottom: 111px;
     width: 387px;
     height: 63px;
-    border-radius: 44px;
     opacity: 1;
   }
   @media (max-width: 767px){
@@ -67,6 +66,10 @@
         height: 52px;
         border-radius: 44px;
         opacity: 1;
+    }
+    .btn-primary {        
+      font: normal normal normal 36px/0px Adobe Caslon Pro;
+      text-align: center;
     }
   }
   
