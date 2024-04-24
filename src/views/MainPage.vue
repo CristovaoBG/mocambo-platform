@@ -47,30 +47,14 @@
     font-size: 2.5rem;
     border-radius: 100px;
     line-height: 1;
-    padding: 5px 35px 5px 35px;
+    padding: 15px 35px 5px 35px;
     background-color: var(--verde);
     border-color: var(--verde);
-    justify-self: center;
-    transition: 500ms ease-out;
-    white-space: nowrap;    
+    text-align: center;
   }
-  .btn-primary {        
-    bottom: 111px;
-    width: 387px;
-    height: 63px;
-    opacity: 1;
-  }
-  @media (max-width: 767px){
-    .btn-primary {
-        width: 320px;
-        height: 52px;
-        border-radius: 44px;
-        opacity: 1;
-    }
-    .btn-primary {        
-      font: normal normal normal 36px/0px Adobe Caslon Pro;
-      text-align: center;
-    }
+
+  .btn-primary {
+      transition: 500ms ease-out;
   }
   
   .btn-primary:hover {
@@ -78,6 +62,12 @@
     padding: 15px 40px 5px 40px;
     transform: translateY(-2px);
     box-shadow: 0 5px 10px var(--verde);
+  }
+
+  @media (max-width: 767px){
+    .btn-primary {
+      font-size: 2.2rem;
+    }
   }
 
   .refugio{
