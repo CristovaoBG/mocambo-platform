@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-        <p class="about">Situado a apenas 10 minutos do coração de Brasília, nosso espaço oferece um salão espaçoso e jardins externos encantadores, que proporcionam o cenário ideal para qualquer ocasião especial.</p>
+        <p class="about" style="margin-top:61px">Situado a apenas 10 minutos do coração de Brasília, nosso espaço oferece um salão espaçoso e jardins externos encantadores, que proporcionam o cenário ideal para qualquer ocasião especial.</p>
     </div>
   </div>
   <div class="row">
@@ -49,6 +49,7 @@
     li {
     border-bottom: 1px solid #ccc; /* Adicionar uma borda inferior com cor cinza claro */
     padding: 10px 0; /* Adicionar um espaçamento interno para separar os itens */
+    color: #242D21;
     }
 
     li:last-child {

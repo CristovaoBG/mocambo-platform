@@ -126,7 +126,7 @@ export default {
     EntranceView,
     ReserveView,
     ChampagneView,
-    GalleryView
+    GalleryView,
   },
 }
 </script>

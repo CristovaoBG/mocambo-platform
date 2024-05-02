@@ -1,7 +1,7 @@
 <template>
   <div>
-    <p>Cabeçalho</p>
+    <!-- <p>Cabeçalho</p> -->
     <RouterView></RouterView>
-    <p>rodapé. v 0.0.1</p>
+    <!-- <p>rodapé. v 0.0.1</p> -->
   </div>
 </template>

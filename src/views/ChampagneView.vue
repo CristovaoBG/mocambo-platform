@@ -6,7 +6,7 @@
                     <div class="mstamp"></div>
                 </div>
                 <div class="address col-md-4 align-self-center">
-                    <p>Endereço:<br>SHIN Trecho 1 / Lago Norte, Brasília, DF<br>71560-100<br>de frente ao balão do Torto<br><br>Telefone: (61) 99811-2533</p>
+                    <p>Endereço:<br>SHIN Trecho 1 / Lago Norte, Brasília, DF<br>71560-100<br>de frente ao balão do Torto<br><br>Telefone: <a href="tel:+5561998112533">(61) 99811-2533</a></p>
                 </div>
             </div>
         </div>

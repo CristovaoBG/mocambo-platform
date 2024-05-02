@@ -1,4 +1,5 @@
-# frontend
+# Mocambo-Platorm
+Implement a responsive platform for a party venue in Brasília based on a Figma design using Vue 3.
 
 ## Project setup
 ```

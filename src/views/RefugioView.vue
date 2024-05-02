@@ -8,7 +8,7 @@
             <p style="margin: 40px 40px 0 40px; z-index: 3;">Acreditamos que os eventos devem ser ambientes orgânicos e íntimos, independentemente do número de convidados, seja 50 ou 500. [Orientamos nossos clientes durante todo o processo de planejamento, oferecendo conselhos especializados e ideias criativas.]</p>
             <br>
             <div style="margin: auto; margin-top: 79px;">
-                <button type="button" class="btn btn-primary btn-agendar">Agende uma visita</button>
+                <a type="button" class="btn btn-primary btn-agendar" href="https://wa.me/5561998112533?text=Boa%20tarde!%20Gostaria%20de%20agendar%20uma%20visita%20:)">Agende uma visita</a>
             </div>
         </div>
     </div>

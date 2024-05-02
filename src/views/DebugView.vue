@@ -1,13 +1,14 @@
 <template>
   <div style="position: relative; margin-bottom: 0;" >
     <div style="position: absolute; background-color: var(--verde-escuro); width: 100%; height: 143px;"></div>
-    <carousel :items-to-show="itemsToShow">
+    <Carousel ref="carouselRef" :items-to-show="itemsToShow">
       <slide v-for="(image) in images" :key="image">
         <div :class="{'imgcontainer': true}">
           <img :src="image" :class="{'c-image': true, 'd-flex': true}">
         </div>
       </slide>
     </carousel>
+  <btn class="next-btn" @click="nextBtnClicked"></btn>
   </div>
 </template>
 
@@ -16,20 +17,31 @@ import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide } from 'vue3-carousel'
 import images from '@/utils/importImages';
 
+
 export default {
   components: {
     Carousel,
     Slide,
   },
+
   data() {
     return{
       images,
     }
+  },  
+  mounted(){
+    
   },
   computed: {
     itemsToShow() {
       const mediaQuery = window.matchMedia('(max-width: 767px)');
       return mediaQuery.matches ? 1 : 1.5;
+    }
+  },
+  methods:{
+    nextBtnClicked(){
+      this.$refs.carouselRef.next()
+      console.log("click")
     }
   }
 }
@@ -56,14 +68,18 @@ export default {
   .imgcontainer{
     width: 100%; 
   }
-}
 
- .carousel__slide {
-   transition: transform 0.5s ease;
- }
-
- .carousel__pagination {
-    display: none; 
+  .next-btn{
+    width: 105px;
+    height: 99px;
+    right: 24px;
+    top: 340px;
+    position: absolute;
+    background: transparent url('../assets/Caminho 69.svg') 0% 0% no-repeat padding-box;
+    background-size: cover;
+    z-index: 100
+  }
+  
 }
 </style>
 
