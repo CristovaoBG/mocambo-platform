@@ -4,5 +4,5 @@ module.exports = defineConfig({
 })
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/mocambo-platform/' : '/'
+  publicPath: 'https://github.com/CristovaoBG/mocambo-platform/tree/master/dist/'
 }
