@@ -7,7 +7,7 @@
   </div>
   <div class="row">
     <div class="col">
-        <ul class="features">
+        <ul class="features" ref="features">
             <li>Salão interno com +0000 m²</li>
             <li>Estacionamento amplo e de fácil acesso</li>
             <li>Pista de dança</li>
@@ -20,6 +20,30 @@
 </div>
 
 </template>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const features = ref(null)
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const lis = features.value.querySelectorAll('li');
+          lis.forEach((li) => {
+            li.style.animationPlayState = "running"
+          })
+        }
+    });
+});
+
+onMounted(() => {
+  if (features.value) {
+    observer.observe(features.value);
+  }
+});
+</script>
+
 
 <style scoped>
   .about{
@@ -40,21 +64,49 @@
     font: normal normal normal 20px/50px Roboto;
     letter-spacing: 0px;
     color: #242D21;
-    opacity: 1;
     list-style-type: none;
     padding: 0;
     text-align: left;
   }
 
+  @keyframes fadein {
+          from {
+              opacity: 0;
+          }
+          to {
+              opacity: 1;
+          }
+      }
+
     li {
-    border-bottom: 1px solid #ccc; /* Adicionar uma borda inferior com cor cinza claro */
-    padding: 10px 0; /* Adicionar um espaçamento interno para separar os itens */
-    color: #242D21;
+      opacity: 0;
+      border-bottom: 1px solid #ccc; /* Adicionar uma borda inferior com cor cinza claro */
+      padding: 10px 0; /* Adicionar um espaçamento interno para separar os itens */
+      color: #242D21;
+      animation: fadein 1s forwards;
+      animation-play-state: paused;
     }
 
-    li:last-child {
-    border-bottom: none; /* Remover a borda do último item */
+    li:nth-child(1) {
+      animation-delay: 0s; /* Sem atraso */
     }
+    li:nth-child(2) {
+      animation-delay: 0.3s; /* 1 segundo de atraso */
+    }
+    li:nth-child(3) {
+      animation-delay: 0.6s; /* 2 segundos de atraso */
+    }
+    li:nth-child(4) {
+      animation-delay: 0.9s; /* 3 segundos de atraso */
+    }
+    li:nth-child(5) {
+      animation-delay: 1.2s; /* 3 segundos de atraso */
+    }
+    li:nth-child(6) {
+      animation-delay: 1.5s; /* 3 segundos de atraso */
+      border-bottom: none; 
+    }
+
   
   @media (max-width: 767px){
     .about{
