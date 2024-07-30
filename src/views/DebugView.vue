@@ -1,9 +1,9 @@
 <template>
   <div style="position: relative; margin-bottom: 0;" >
     <div style="position: absolute; background-color: var(--verde-escuro); width: 100%; height: 143px;"></div>
-    <Carousel ref="carouselRef" :items-to-show="itemsToShow">
-      <slide v-for="(image) in images" :key="image">
-        <div :class="{'imgcontainer': true}">
+    <Carousel ref="carouselRef" :items-to-show="itemsToShow" transition="100">
+      <slide v-for="(image) in images" :key="image" class="test">
+        <div class="imgcontainer">
           <img :src="image" :class="{'c-image': true, 'd-flex': true}">
         </div>
       </slide>
@@ -47,6 +47,12 @@ export default {
 }
 </script>
 
+<style>
+.carousel__track{
+  transition: transform .1s ease !important;
+}
+</style>
+
 <style scoped lang="scss">
 
 .imgcontainer{
@@ -61,7 +67,11 @@ export default {
   // width: 1147px;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; 
+}
+
+.test{
+  transition: transform 5s ease !important;
 }
 
 @media (max-width: 767px){
