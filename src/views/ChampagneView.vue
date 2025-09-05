@@ -6,11 +6,11 @@
                     <div class="mstamp"></div>
                 </div>
                 <div class="address col-md-4 align-self-center">
-                    <p>Endereço:<br>SHIN Trecho 1 / Lago Norte, Brasília, DF<br>71560-100<br>de frente ao balão do Torto<br><br>Telefone: <a href="tel:+5561998112533">(61) 99811-2533</a></p>
+                    <p>Endereço:<br>SHIN Trecho 1 / Lago Norte, Brasília, DF<br>71560-100<br>de frente ao balão do Torto<br><br>Telefone: <a href="tel:+5561998112533">(61) 99811-2533</a><br><br>Siga-nos: <a href="https://www.instagram.com/mocamboespaco" target="_blank" class="instagram-link">@mocamboespaco</a></p>
                 </div>
             </div>
         </div>
-        <p class="footn">©2024 – Mocambo Ltda. – Todos os direitos reservados.</p>
+        <p class="footn">©2025 – Mocambo Ltda. – Todos os direitos reservados.</p>
 
     </div>
 </template>
@@ -18,6 +18,18 @@
 <style scoped>
 p{        
     color: var(--amarelo);
+}
+
+.instagram-link {
+    color: var(--amarelo);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.instagram-link:hover {
+    color: #E4405F;
+    text-decoration: underline;
 }
 .champagne {
     position: relative;

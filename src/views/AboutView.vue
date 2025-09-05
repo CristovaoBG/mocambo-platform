@@ -8,7 +8,7 @@
   <div class="row">
     <div class="col">
         <ul class="features" ref="features">
-            <li>Salão interno com +0000 m²</li>
+            <li>Salão com capacidade para 200 lugares</li>
             <li>Estacionamento amplo e de fácil acesso</li>
             <li>Pista de dança</li>
             <li>Espaço Bar & Lounge</li>
