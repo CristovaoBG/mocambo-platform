@@ -109,13 +109,13 @@
 
 
 <script>
-import TopBar from '../views/TopBar.vue'
-import RefugioView from '../views/RefugioView.vue'
-import AboutView from '../views/AboutView.vue'
-import EntranceView from '../views/EntranceView.vue'
-import ReserveView from '../views/ReserveView.vue'
-import ChampagneView from '../views/ChampagneView.vue'
-import GalleryView from '../views/DebugView.vue'
+import TopBar from './TopBar.vue'
+import RefugioView from './RefugioView.vue'
+import AboutView from './AboutView.vue'
+import EntranceView from './EntranceView.vue'
+import ReserveView from './ReserveView.vue'
+import ChampagneView from './ChampagneView.vue'
+import GalleryView from './GalleryView.vue'
 
 export default {
   name: 'HelloWorld',

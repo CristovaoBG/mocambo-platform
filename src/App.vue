@@ -1,10 +1,16 @@
 <template>
-  <div>
-    <!-- <p>Cabeçalho</p> -->
-    <RouterView></RouterView>
-    <!-- <p>rodapé. v 0.0.1</p> -->
-  </div>
+  <MainPage />
 </template>
+
+<script>
+import MainPage from './components/MainPage.vue'
+
+export default {
+  components: {
+    MainPage,
+  },
+}
+</script>
 
 <style>
 .visible{
