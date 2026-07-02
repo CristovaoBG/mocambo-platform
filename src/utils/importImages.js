@@ -1,13 +1,18 @@
-// src/utils/importImages.js
+const fullContext = require.context('../assets/gallery', false, /\.(png|jpe?g)$/i);
+const thumbContext = require.context('../assets/gallery/thumbs', false, /\.(png|jpe?g)$/i);
 
-const importImages = (r) => {
-    let images = {};
-    r.keys().forEach(item => {
-      images[item.replace('./', '')] = r(item);
-    });
-    return images;
-  }
-  
-  const images = importImages(require.context('../assets/gallery', false, /\.(png|jpe?g|svg)$/));
-  
-  export default images;
+const thumbsByName = thumbContext.keys().reduce((acc, key) => {
+  acc[key.replace('./', '')] = thumbContext(key);
+  return acc;
+}, {});
+
+const images = fullContext.keys().sort().map((key) => {
+  const name = key.replace('./', '');
+  return {
+    id: name,
+    full: fullContext(key),
+    thumb: thumbsByName[name],
+  };
+});
+
+export default images;

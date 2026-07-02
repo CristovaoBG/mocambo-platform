@@ -1,104 +1,120 @@
 <template>
-  <div style="position: relative; margin-bottom: 0;" >
-    <div style="position: absolute; background-color: var(--verde-escuro); width: 100%; height: 143px;"></div>
-    <Carousel ref="carouselRef" :items-to-show="itemsToShow" transition="100">
-      <slide v-for="(image) in images" :key="image" class="test">
-        <div class="imgcontainer">
-          <img :src="image" :class="{'c-image': true, 'd-flex': true}">
+  <div class="gallery">
+    <div class="gallery__backdrop"></div>
+
+    <Swiper
+      ref="swiperRef"
+      class="gallery__swiper"
+      :modules="modules"
+      :slides-per-view="slidesPerView"
+      :space-between="0"
+      :speed="450"
+      :loop="images.length > 1"
+      :breakpoints="breakpoints"
+      @swiper="onSwiper"
+    >
+      <SwiperSlide v-for="(image, index) in images" :key="image.id">
+        <div class="gallery__slide">
+          <ProgressiveImage
+            :full="image.full"
+            :thumb="image.thumb"
+            :alt="image.id"
+            :eager="index === 0"
+          />
         </div>
-      </slide>
-    </carousel>
-  <btn class="next-btn" @click="nextBtnClicked"></btn>
+      </SwiperSlide>
+    </Swiper>
+
+    <button
+      type="button"
+      class="gallery__next-btn"
+      aria-label="Próxima foto"
+      @click="nextSlide"
+    ></button>
   </div>
 </template>
 
 <script>
-import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide } from 'vue3-carousel'
-import images from '@/utils/importImages';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { A11y } from 'swiper/modules';
+import 'swiper/css';
 
+import ProgressiveImage from './ProgressiveImage.vue';
+import images from '@/utils/importImages';
 
 export default {
   components: {
-    Carousel,
-    Slide,
+    Swiper,
+    SwiperSlide,
+    ProgressiveImage,
   },
 
   data() {
-    return{
+    return {
       images,
-    }
-  },  
-  mounted(){
-    
+      modules: [A11y],
+      swiperInstance: null,
+      slidesPerView: 1,
+      breakpoints: {
+        768: {
+          slidesPerView: 1.5,
+        },
+      },
+    };
   },
-  computed: {
-    itemsToShow() {
-      const mediaQuery = window.matchMedia('(max-width: 767px)');
-      return mediaQuery.matches ? 1 : 1.5;
-    }
+
+  methods: {
+    onSwiper(swiper) {
+      this.swiperInstance = swiper;
+    },
+
+    nextSlide() {
+      this.swiperInstance?.slideNext();
+    },
   },
-  methods:{
-    nextBtnClicked(){
-      this.$refs.carouselRef.next()
-      console.log("click")
-    }
-  }
-}
+};
 </script>
 
-<style>
-.carousel__track{
-  transition: transform .1s ease !important;
-}
-</style>
-
 <style scoped lang="scss">
-
-.imgcontainer{
-  height: 846px;
-  width: 99%; 
-  background-size: cover; /* faz com que a imagem cubra toda a área da div */
-  background-position: center; /* centraliza a imagem na div */
-  background-color: rgb(119, 160, 173); /* cor de fundo da div */
+.gallery {
+  position: relative;
+  margin-bottom: 0;
 }
-.c-image{
-  // height: 846px;
-  // width: 1147px;
+
+.gallery__backdrop {
+  position: absolute;
+  background-color: var(--verde-escuro);
   width: 100%;
-  height: 100%;
-  object-fit: cover; 
+  height: 143px;
 }
 
-.test{
-  transition: transform 5s ease !important;
+.gallery__swiper {
+  width: 100%;
 }
 
-@media (max-width: 767px){
-  .imgcontainer{
-    width: 100%; 
-  }
+.gallery__slide {
+  height: 846px;
+  width: 99%;
+  background-color: rgb(119, 160, 173);
+}
 
-  .next-btn{
-    width: 105px;
-    height: 99px;
-    right: 24px;
-    top: 340px;
-    position: absolute;
-    background: transparent url('../assets/Caminho 69.svg') 0% 0% no-repeat padding-box;
-    background-size: cover;
-    z-index: 100
+.gallery__next-btn {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  width: 105px;
+  height: 99px;
+  right: 24px;
+  top: 340px;
+  position: absolute;
+  background: transparent url('../assets/Caminho 69.svg') 0% 0% no-repeat padding-box;
+  background-size: cover;
+  z-index: 100;
+}
+
+@media (max-width: 767px) {
+  .gallery__slide {
+    width: 100%;
   }
-  
 }
 </style>
-
-<!-- global -->
-<style>
-.carousel__track {
-  margin-bottom: 0px;
-}
-
-
-</style>
-
