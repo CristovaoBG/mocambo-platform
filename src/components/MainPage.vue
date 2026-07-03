@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <iframe style="width: 100%; height: 461px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15362.614955327766!2d-47.892157299999994!3d-15.716518699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a39b38bc9f96d%3A0x38afa3187b47b826!2sSal%C3%A3o%20de%20Festa%20I%20Casamento%20I%20Evento%20Corporativo%20I%20Espa%C3%A7o%20Mocambo%20-%20Bras%C3%ADlia-DF!5e0!3m2!1sen!2sbr!4v1712345052714!5m2!1sen!2sbr&language=pt-BR" allowfullscreen></iframe>
+    <iframe style="width: 100%; height: 461px" :src="site.maps.embedUrl" allowfullscreen></iframe>
     <ReserveView/>
     <ChampagneView/>
     
@@ -115,6 +115,7 @@
 
 
 <script>
+import { site } from '@/content/site'
 import TopBar from './TopBar.vue'
 import RefugioView from './RefugioView.vue'
 import AboutView from './AboutView.vue'
@@ -125,6 +126,9 @@ import GalleryView from './GalleryView.vue'
 
 export default {
   name: 'HelloWorld',
+  data() {
+    return { site }
+  },
   components: {
     TopBar,
     RefugioView,

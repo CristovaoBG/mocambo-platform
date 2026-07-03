@@ -1,7 +1,7 @@
 <template>
     <!-- Top bar e Whatsapp -->
-    <a class="icon whatsapp" href="https://wa.me/5561998112533" target="_blank"></a>
-    <a class="icon instagram" href="https://www.instagram.com/mocamboespaco" target="_blank"></a>
+    <a class="icon whatsapp" :href="site.whatsapp.url" target="_blank"></a>
+    <a class="icon instagram" :href="site.instagram.url" target="_blank"></a>
     <div class="topbar justify-content-center" style="position: relative">
       <div class="title d-flex " ref="title"></div>
     </div>
@@ -9,6 +9,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
+import { site } from '@/content/site';
 
 const title = ref(null);
 
