@@ -6,8 +6,8 @@ const whatsappReserveUrl = whatsappUrl(site.whatsapp.messages.reserve);
 
 <template>
     <div style="height:376px;"  class="align-items-center justify-content-center d-flex flex-column">
-      <h2 class="reserve">Reserve agora e celebre<br>momentos especiais conosco!</h2>
-      <a type="button" class="btn btn-primary btn-agendar" :href="whatsappReserveUrl">Fazer reserva</a>
+      <h2 class="reserve">Reserve agora, e venha celebrar!</h2>
+      <a type="button" class="btn btn-primary btn-agendar" :href="whatsappReserveUrl">Fale conosco</a>
     </div>
 </template>
 

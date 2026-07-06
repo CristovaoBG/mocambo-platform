@@ -20,7 +20,7 @@ import { site } from '@/content/site';
 </template>
 
 <style scoped>
-p{        
+p{
     color: var(--amarelo);
 }
 

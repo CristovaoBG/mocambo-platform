@@ -2,16 +2,17 @@
     <TopBar/>
     <GalleryView/>
     <RefugioView/>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-5 d-flex justify-content-center align-items-center" style="min-height: 604px;">
+    <div class="container-fluid about-entrance">
+      <div class="row g-0">
+        <div class="col-md-5 d-flex align-items-stretch">
           <AboutView />
         </div>
-        <div class="col-md-7" style="margin: 0; padding-right: 0; padding-left: 0;">
+        <div class="col-md-7 about-entrance__image">
           <EntranceView/>
         </div>
       </div>
     </div>
+    <ExperienceView/>
     <iframe style="width: 100%; height: 461px" :src="site.maps.embedUrl" allowfullscreen></iframe>
     <ReserveView/>
     <ChampagneView/>
@@ -102,9 +103,13 @@
     opacity: 1;
   }
 
-  .about-features-div{
-    height: 756px;
-    opacity: 1;
+  .about-entrance {
+    background: var(--branco);
+  }
+
+  .about-entrance__image {
+    margin: 0;
+    padding: 0;
   }
 
   @media (max-width: 767px){
@@ -119,6 +124,7 @@ import { site } from '@/content/site'
 import TopBar from './TopBar.vue'
 import RefugioView from './RefugioView.vue'
 import AboutView from './AboutView.vue'
+import ExperienceView from './ExperienceView.vue'
 import EntranceView from './EntranceView.vue'
 import ReserveView from './ReserveView.vue'
 import ChampagneView from './ChampagneView.vue'
@@ -133,6 +139,7 @@ export default {
     TopBar,
     RefugioView,
     AboutView,
+    ExperienceView,
     EntranceView,
     ReserveView,
     ChampagneView,
