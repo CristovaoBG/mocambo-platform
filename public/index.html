@@ -1,15 +1,29 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="<%= htmlWebpackPlugin.options.seo.lang %>">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="<%= htmlWebpackPlugin.options.seo.description %>">
+    <link rel="canonical" href="<%= htmlWebpackPlugin.options.seo.canonicalUrl %>">
     <link rel="icon" href="<%= BASE_URL %>icon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="<%= htmlWebpackPlugin.options.seo.locale %>">
+    <meta property="og:site_name" content="<%= htmlWebpackPlugin.options.title %>">
+    <meta property="og:title" content="<%= htmlWebpackPlugin.options.seo.ogTitle %>">
+    <meta property="og:description" content="<%= htmlWebpackPlugin.options.seo.ogDescription %>">
+    <meta property="og:url" content="<%= htmlWebpackPlugin.options.seo.canonicalUrl %>">
+    <meta property="og:image" content="<%= htmlWebpackPlugin.options.seo.ogImageUrl %>">
+    <meta name="twitter:card" content="<%= htmlWebpackPlugin.options.seo.twitterCard %>">
+    <meta name="twitter:title" content="<%= htmlWebpackPlugin.options.seo.ogTitle %>">
+    <meta name="twitter:description" content="<%= htmlWebpackPlugin.options.seo.ogDescription %>">
+    <meta name="twitter:image" content="<%= htmlWebpackPlugin.options.seo.ogImageUrl %>">
+    <script type="application/ld+json"><%= htmlWebpackPlugin.options.seo.jsonLd %></script>
+    <title><%= htmlWebpackPlugin.options.seo.title %></title>
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>O site <%= htmlWebpackPlugin.options.title %> precisa de JavaScript habilitado para funcionar corretamente.</strong>
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
