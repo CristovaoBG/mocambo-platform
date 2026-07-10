@@ -1,6 +1,4 @@
 const { defineConfig } = require('@vue/cli-service')
-const PrerendererWebpackPlugin = require('@prerenderer/webpack-plugin')
-const Renderer = require('@prerenderer/renderer-puppeteer')
 const seo = require('./src/content/seo.cjs')
 
 const htmlSeo = {
@@ -26,18 +24,5 @@ module.exports = defineConfig({
 
       return args
     })
-  },
-  configureWebpack: (config) => {
-    if (process.env.NODE_ENV === 'production') {
-      config.plugins.push(
-        new PrerendererWebpackPlugin({
-          routes: ['/'],
-          renderer: new Renderer({
-            renderAfterDocumentEvent: 'render-event',
-            headless: true,
-          }),
-        }),
-      )
-    }
   },
 })
