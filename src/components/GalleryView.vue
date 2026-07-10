@@ -120,6 +120,7 @@ export default {
 .gallery {
   position: relative;
   margin-bottom: 0;
+  overflow-x: hidden;
 }
 
 .gallery__backdrop {
@@ -131,6 +132,7 @@ export default {
 
 .gallery__carousel {
   position: relative;
+  overflow-x: hidden;
 }
 
 .gallery__fade {
@@ -273,6 +275,8 @@ export default {
 
 @media (max-width: 767px) {
   .gallery__swiper {
+    overflow: hidden;
+
     :deep(.swiper-slide) {
       opacity: 1;
       transform: none;

@@ -13,11 +13,13 @@
     align-items: center;
     overflow: hidden;
     border: 0;
+    width: 100%;
   }
   img{
-    height: 750px;
-    width: auto;
-    max-height: 100%;
-    object-fit: contain;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 750px;
+    object-fit: cover;
   }
 </style>

@@ -81,7 +81,8 @@ onMounted(() => {
   }
 
   .parent{
-    position:relative;
+    position: relative;
+    overflow: hidden;
   }
 
   .bglogo{
@@ -97,7 +98,7 @@ onMounted(() => {
 
   @media (max-width: 767px){
     .bglogo{
-      left: -5%;
+      left: 0;
     }
   }
 
