@@ -131,7 +131,7 @@ const items = [
 
 .faq__question {
   font-family: 'adobe-caslon-pro', serif;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-weight: 400;
   color: var(--verde);
   margin: 0;
@@ -139,15 +139,15 @@ const items = [
 }
 
 .faq__answer {
-  margin: 0.75rem 0 0;
+  margin: 0.75rem 1rem 0;
 }
 
 .faq__answer-text,
 .faq__answer-list li {
-  font-family: 'adobe-caslon-pro', serif;
+  font-family: 'roboto', serif;
   font-size: 1rem;
   line-height: 1.5;
-  color: rgba(72, 85, 68, 0.85);
+  color: rgba(40, 44, 39, 0.85);
 }
 
 .faq__answer-text {
