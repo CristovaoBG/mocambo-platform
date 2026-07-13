@@ -13,6 +13,7 @@
       </div>
     </div>
     <ExperienceView/>
+    <FaqView/>
     <iframe style="width: 100%; height: 461px" :src="site.maps.embedUrl" allowfullscreen></iframe>
     <ReserveView/>
     <ChampagneView/>
@@ -129,6 +130,7 @@ import EntranceView from './EntranceView.vue'
 import ReserveView from './ReserveView.vue'
 import ChampagneView from './ChampagneView.vue'
 import GalleryView from './GalleryView.vue'
+import FaqView from './FaqView.vue'
 
 export default {
   name: 'HelloWorld',
@@ -144,6 +146,7 @@ export default {
     ReserveView,
     ChampagneView,
     GalleryView,
+    FaqView,
   },
 }
 </script>
