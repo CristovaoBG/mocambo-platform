@@ -57,11 +57,11 @@ function parseAnswer(answer) {
 const items = [
   {
     question: 'Onde fica o Mocambo?',
-    answer: 'Temos uma localização excelente! O Mocambo fica a 2 km da saída do Lago Norte, sentido Saída Norte, pertinho do Balão do Torto. Confira no mapa abaixo',
+    answer: 'Temos uma localização excelente! O Mocambo fica a 2 km da saída do Lago Norte, sentido Saída Norte do Plano Piloto, pertinho do Balão do Torto. Confira no mapa abaixo',
   },
   {
     question: 'O acesso é fácil?',
-    answer: 'O acesso é fácil e direto, e o Mocambo fica a 100 m da pista.',
+    answer: 'O acesso é fácil e direto, e o Mocambo fica a 100 metros da pista.',
   },
   {
     question: 'Vocês indicam fornecedores?',
@@ -97,7 +97,7 @@ const items = [
   },
   {
     question: 'Como faço um orçamento?',
-    answer: 'Para fazermos o seu orçamento, por favor, informe: data do evento; o que pretende comemorar; número de convidados viw WhatsApp.',
+    answer: 'Para fazermos o seu orçamento, por favor, informe: data do evento; o que pretende comemorar; número de convidados via WhatsApp.',
   },
 ].map((item) => ({
   question: item.question,
@@ -122,7 +122,7 @@ const items = [
 
 .faq__item {
   border-bottom: 1px solid rgba(36, 45, 33, 0.15);
-  padding: 1.25rem 0;
+  padding: 0.75rem 0;
 }
 
 .faq__item:last-child {
@@ -139,15 +139,17 @@ const items = [
 }
 
 .faq__answer {
-  margin: 0.75rem 1rem 0;
+  margin: 0.85rem 0 0.35rem;
+  padding: 0.15rem 0 0.15rem 1rem;
+  border-left: 2px solid rgba(72, 85, 68, 0.35);
 }
-
+ 
 .faq__answer-text,
 .faq__answer-list li {
-  font-family: 'roboto', serif;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: rgba(40, 44, 39, 0.85);
+  font-family: 'roboto', sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: rgba(40, 44, 39, 0.72);
 }
 
 .faq__answer-text {

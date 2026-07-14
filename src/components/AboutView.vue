@@ -73,7 +73,6 @@ onMounted(() => {
   padding: 0;
   margin: 0;
   text-align: left;
-  font: normal normal normal 18px/1.4 Roboto;
   color: #242d21;
 }
 
@@ -92,6 +91,7 @@ onMounted(() => {
   opacity: 0;
   border-bottom: 1px solid rgba(36, 45, 33, 0.15);
   padding: 0.75rem 0;
+  font: normal normal normal 15px/1.4 Roboto;
   color: #242d21;
   animation: fadein 0.6s forwards;
   animation-play-state: paused;

@@ -113,6 +113,12 @@
     padding: 0;
   }
 
+  @media (min-width: 768px) {
+    .about-entrance__image {
+      display: flex;
+    }
+  }
+
   @media (max-width: 767px){
        h1 {font: normal normal normal 46px/55px Adobe Caslon Pro;} 
        h2 {font: normal normal normal 28px/42px Adobe Caslon Pro;}

@@ -1,25 +1,29 @@
 <template>
-    <div class ="entrance">
-      <img class="imagem" :src="require('@/assets/entrada.jpg')"  alt="Foto da entrada">
+    <div class="entrance">
+      <img class="imagem" :src="require('@/assets/entrada.jpg')" alt="Foto da entrada">
     </div>
 </template>
 
 <style scoped>
-  .entrance{
-    background: #EFEFEF;
-    opacity: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .entrance {
+    width: 100%;
     overflow: hidden;
-    border: 0;
-    width: 100%;
   }
-  img{
+
+  img {
+    display: block;
     width: 100%;
-    max-width: 100%;
     height: auto;
-    max-height: 750px;
     object-fit: cover;
+  }
+
+  @media (min-width: 768px) {
+    .entrance {
+      height: 100%;
+    }
+
+    img {
+      height: 100%;
+    }
   }
 </style>
