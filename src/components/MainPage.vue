@@ -14,7 +14,23 @@
     </div>
     <ExperienceView/>
     <FaqView/>
-    <iframe style="width: 100%; height: 461px" :src="site.maps.embedUrl" allowfullscreen></iframe>
+    <section class="map-section">
+      <iframe
+        class="map-section__frame"
+        :src="site.maps.embedUrl"
+        allowfullscreen
+        loading="lazy"
+        title="Localização do Espaço Mocambo"
+      ></iframe>
+      <a
+        class="btn-maps"
+        :href="site.maps.url"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Abrir no Maps
+      </a>
+    </section>
     <ReserveView/>
     <ChampagneView/>
     
@@ -119,9 +135,58 @@
     }
   }
 
+  .map-section {
+    position: relative;
+    width: 100%;
+  }
+
+  .map-section__frame {
+    display: block;
+    width: 100%;
+    height: 461px;
+    border: 0;
+  }
+
+  .btn-maps {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%);
+    display: inline-block;
+    font-family: "adobe-caslon-pro", serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--verde);
+    background: var(--branco);
+    border: 1px solid var(--verde);
+    border-radius: 100px;
+    padding: 0.7rem 1.75rem 0.45rem;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    box-shadow: 0 6px 20px rgba(36, 45, 33, 0.18);
+    transition: 400ms ease-out;
+  }
+
+  .btn-maps:hover {
+    color: var(--branco);
+    background: var(--verde);
+    border-color: var(--verde);
+    transform: translate(-50%, -2px);
+    box-shadow: 0 8px 24px rgba(36, 45, 33, 0.28);
+  }
+
   @media (max-width: 767px){
-       h1 {font: normal normal normal 46px/55px Adobe Caslon Pro;} 
-       h2 {font: normal normal normal 28px/42px Adobe Caslon Pro;}
+       h1 { font-size: 46px; line-height: 55px; } 
+       h2 { font-size: 28px; line-height: 42px; }
+
+       .btn-maps {
+         font-size: 1.15rem;
+         padding: 0.6rem 1.35rem 0.4rem;
+         bottom: 1.15rem;
+       }
   }
 </style>
 
