@@ -2,14 +2,12 @@
     <TopBar/>
     <GalleryView/>
     <RefugioView/>
-    <div class="container-fluid about-entrance">
       <div class="row g-0">
         <div class="col-md-5 d-flex align-items-stretch">
           <AboutView />
         </div>
         <div class="col-md-7 about-entrance__image">
           <EntranceView/>
-        </div>
       </div>
     </div>
     <ExperienceView/>

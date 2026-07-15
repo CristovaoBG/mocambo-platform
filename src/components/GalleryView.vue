@@ -291,6 +291,7 @@ export default {
 
   .gallery__fade {
     width: clamp(32px, 10vw, 64px);
+    opacity: 0.4;
   }
 
   .gallery__nav {
