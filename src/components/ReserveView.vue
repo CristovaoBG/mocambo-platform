@@ -15,7 +15,7 @@ const whatsappReserveUrl = whatsappUrl(site.whatsapp.messages.reserve);
   .reserve{
     max-width: 404px;
     width: 100%;
-    margin: 0 auto 2.5rem;
+    margin: 0 auto 3.5rem;
     padding: 0 1rem;
     box-sizing: border-box;
   }

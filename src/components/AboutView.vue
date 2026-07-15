@@ -54,7 +54,7 @@ onMounted(() => {
 
 .about-intro {
   text-align: left;
-  font: normal normal normal 16px/26px Roboto;
+  font: normal normal normal 16px/26px roboto, sans-serif;
   color: #242d21;
   margin: 0 0 2.25rem;
 }
@@ -91,7 +91,7 @@ onMounted(() => {
   opacity: 0;
   border-bottom: 1px solid rgba(36, 45, 33, 0.15);
   padding: 0.75rem 0;
-  font: normal normal normal 15px/1.4 Roboto;
+  font: normal normal normal 15px/1.4 roboto, sans-serif;
   color: #242d21;
   animation: fadein 0.6s forwards;
   animation-play-state: paused;
