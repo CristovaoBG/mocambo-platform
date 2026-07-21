@@ -6,13 +6,18 @@ const thumbsByName = thumbContext.keys().reduce((acc, key) => {
   return acc;
 }, {});
 
-const images = fullContext.keys().sort().map((key) => {
-  const name = key.replace('./', '');
-  return {
-    id: name,
-    full: fullContext(key),
-    thumb: thumbsByName[name],
-  };
-});
+const images = fullContext
+  .keys()
+  .sort((a, b) =>
+    a.localeCompare(b, 'pt', { numeric: true, sensitivity: 'base' })
+  )
+  .map((key) => {
+    const name = key.replace('./', '');
+    return {
+      id: name,
+      full: fullContext(key),
+      thumb: thumbsByName[name],
+    };
+  });
 
 export default images;
