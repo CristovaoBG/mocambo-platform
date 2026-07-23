@@ -23,3 +23,9 @@ pnpm-debug.log*
 
 # Generated gallery thumbnails
 src/assets/gallery/thumbs/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
