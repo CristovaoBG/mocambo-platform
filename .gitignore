@@ -21,5 +21,6 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
-# Generated gallery thumbnails
+# Generated thumbnails
 src/assets/gallery/thumbs/
+src/assets/thumbs/

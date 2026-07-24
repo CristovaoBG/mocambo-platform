@@ -1,74 +1,92 @@
 <script setup>
 import { site } from '@/content/site';
+import ProgressiveImage from './ProgressiveImage.vue';
+
+const full = require('@/assets/Grupo 32.png');
+const thumb = require('@/assets/thumbs/Grupo 32.png');
 </script>
 
 <template>
-    <div class="champagne">
-        <div class="container-fluid">
-            <div class="row justify-content-start" style="height:511px">
-                <div class="col-md-4 d-flex justify-content-center align-self-center">
-                    <div class="mstamp"></div>
-                </div>
-                <div class="address col-md-4 align-self-center">
-                    <p>Endereço:<br><template v-for="(line, index) in site.address.lines" :key="line">{{ line }}<br v-if="index < site.address.lines.length - 1"></template><br><br>Telefone: <a :href="'tel:' + site.phone.tel">{{ site.phone.display }}</a><br><br>Siga-nos: <a :href="site.instagram.url" target="_blank" class="instagram-link">{{ site.instagram.handle }}</a></p>
-                </div>
-            </div>
+  <div class="champagne">
+    <ProgressiveImage
+      class="champagne__bg"
+      :full="full"
+      :thumb="thumb"
+      alt=""
+    />
+    <div class="champagne__content container-fluid">
+      <div class="row justify-content-start" style="height:511px">
+        <div class="col-md-4 d-flex justify-content-center align-self-center">
+          <div class="mstamp"></div>
         </div>
-        <p class="footn">{{ site.copyright }}</p>
-
+        <div class="address col-md-4 align-self-center">
+          <p>Endereço:<br><template v-for="(line, index) in site.address.lines" :key="line">{{ line }}<br v-if="index < site.address.lines.length - 1"></template><br><br>Telefone: <a :href="'tel:' + site.phone.tel">{{ site.phone.display }}</a><br><br>Siga-nos: <a :href="site.instagram.url" target="_blank" class="instagram-link">{{ site.instagram.handle }}</a></p>
+        </div>
+      </div>
     </div>
+    <p class="footn">{{ site.copyright }}</p>
+  </div>
 </template>
 
 <style scoped>
-p{
-    color: var(--amarelo);
+p {
+  color: var(--amarelo);
 }
 
 .instagram-link {
-    color: var(--amarelo);
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+  color: var(--amarelo);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .instagram-link:hover {
-    color: #E4405F;
-    text-decoration: underline;
+  color: #E4405F;
+  text-decoration: underline;
 }
-.champagne {
-    position: relative;
-    height: 511px;
-    width: 100%;
-    background: transparent url('../assets/Grupo 32.png') 0% 0% no-repeat padding-box;
-    opacity: 1;
-    background-position: center;
 
+.champagne {
+  position: relative;
+  height: 511px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.champagne__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.champagne__content {
+  position: relative;
+  z-index: 1;
 }
 
 .mstamp {
-    width: 159px;
-    height: 163px;
-    background: transparent url('../assets/Grupo 20.svg') center;
-    opacity: 1;
+  width: 159px;
+  height: 163px;
+  background: transparent url('../assets/Grupo 20.svg') center;
+  opacity: 1;
 }
 
- .footn{
-    position: absolute;
-    justify-self: center;
-    bottom: 3%;
-    transform: translateX(-50%);
-    left: 50%;
-    width: 60%;
+.footn {
+  position: absolute;
+  z-index: 1;
+  justify-self: center;
+  bottom: 3%;
+  transform: translateX(-50%);
+  left: 50%;
+  width: 60%;
 }
 
-@media (max-width: 767px){
-    .address{
-        align-self:baseline
-    }
-    .champagne {
-        height: 682px;
-        background-size: cover;
-    }
-}
+@media (max-width: 767px) {
+  .address {
+    align-self: baseline;
+  }
 
+  .champagne {
+    height: 682px;
+  }
+}
 </style>
