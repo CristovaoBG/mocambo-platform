@@ -1,7 +1,7 @@
 <template>
     <!-- Top bar e Whatsapp -->
-    <a class="icon whatsapp" :href="site.whatsapp.url" target="_blank"></a>
-    <a class="icon instagram" :href="site.instagram.url" target="_blank"></a>
+    <a class="icon whatsapp" :href="site.whatsapp.url" target="_blank" rel="noopener noreferrer"></a>
+    <a class="icon instagram" :href="site.instagram.url" target="_blank" rel="noopener noreferrer"></a>
     <div class="topbar justify-content-center" style="position: relative">
       <div class="title d-flex " ref="title"></div>
     </div>

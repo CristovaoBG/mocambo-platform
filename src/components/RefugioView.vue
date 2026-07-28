@@ -8,7 +8,7 @@
             <p ref="mainText" style="margin: 40px 40px 0 40px; z-index: 3;">Nossos espaços são lindos, aconchegantes e inspiradores. Cada canto é tratado com o cuidado que transforma sua festa em um evento ímpar, transpirando a sua alegria, distribuindo a sua energia!</p>
             <br>
             <div style="margin: auto; margin-top: 79px;">
-                <a type="button" class="btn btn-primary btn-agendar" :href="whatsappVisitUrl">Agende uma visita</a>
+                <a type="button" class="btn btn-primary btn-agendar" :href="whatsappVisitUrl" target="_blank" rel="noopener noreferrer">Agende uma visita</a>
             </div>
         </div>
     </div>
