@@ -2,8 +2,15 @@
 import { site } from '@/content/site';
 import ProgressiveImage from './ProgressiveImage.vue';
 
-const full = require('@/assets/Grupo 32.png');
+const jpeg800 = require('@/assets/display/Grupo 32-800w.jpg');
+const jpeg1600 = require('@/assets/display/Grupo 32-1600w.jpg');
+const webp800 = require('@/assets/display/Grupo 32-800w.webp');
+const webp1600 = require('@/assets/display/Grupo 32-1600w.webp');
+
+const full = jpeg1600;
 const thumb = require('@/assets/thumbs/Grupo 32.png');
+const srcset = `${jpeg800} 800w, ${jpeg1600} 1600w`;
+const webpSrcset = `${webp800} 800w, ${webp1600} 1600w`;
 </script>
 
 <template>
@@ -11,7 +18,10 @@ const thumb = require('@/assets/thumbs/Grupo 32.png');
     <ProgressiveImage
       class="champagne__bg"
       :full="full"
+      :srcset="srcset"
+      :webp-srcset="webpSrcset"
       :thumb="thumb"
+      sizes="100vw"
       alt=""
     />
     <div class="champagne__content container-fluid">

@@ -7,15 +7,24 @@
       aria-hidden="true"
       decoding="async"
     />
-    <img
-      v-if="shouldLoadFull"
-      :src="full"
-      :alt="alt"
-      class="progressive-image__full"
-      :class="{ 'is-loaded': loaded }"
-      decoding="async"
-      @load="onFullLoad"
-    />
+    <picture v-if="shouldLoadFull">
+      <source
+        v-if="webpSrcset"
+        type="image/webp"
+        :srcset="webpSrcset"
+        :sizes="sizes"
+      />
+      <img
+        :src="full"
+        :srcset="srcset || undefined"
+        :sizes="srcset ? sizes : undefined"
+        :alt="alt"
+        class="progressive-image__full"
+        :class="{ 'is-loaded': loaded }"
+        decoding="async"
+        @load="onFullLoad"
+      />
+    </picture>
   </div>
 </template>
 
@@ -29,6 +38,18 @@ export default {
     thumb: {
       type: String,
       required: true,
+    },
+    srcset: {
+      type: String,
+      default: '',
+    },
+    webpSrcset: {
+      type: String,
+      default: '',
+    },
+    sizes: {
+      type: String,
+      default: '100vw',
     },
     alt: {
       type: String,
@@ -88,11 +109,16 @@ export default {
 }
 
 .progressive-image__placeholder,
-.progressive-image__full {
+.progressive-image__full,
+.progressive-image picture {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+}
+
+.progressive-image__placeholder,
+.progressive-image__full {
   object-fit: cover;
 }
 

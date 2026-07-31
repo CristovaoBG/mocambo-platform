@@ -26,7 +26,10 @@
           <div class="gallery__slide">
             <ProgressiveImage
               :full="image.full"
+              :srcset="image.srcset"
+              :webp-srcset="image.webpSrcset"
               :thumb="image.thumb"
+              sizes="(max-width: 767px) 100vw, 70vw"
               :alt="image.id"
               :eager="index === 0"
             />

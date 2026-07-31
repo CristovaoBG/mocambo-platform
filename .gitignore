@@ -23,4 +23,6 @@ pnpm-debug.log*
 
 # Generated thumbnails
 src/assets/gallery/thumbs/
+src/assets/gallery/display/
 src/assets/thumbs/
+src/assets/display/
