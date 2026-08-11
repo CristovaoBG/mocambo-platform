@@ -20,6 +20,14 @@
     <meta name="twitter:image" content="<%= htmlWebpackPlugin.options.seo.ogImageUrl %>">
     <script type="application/ld+json"><%= htmlWebpackPlugin.options.seo.jsonLd %></script>
     <title><%= htmlWebpackPlugin.options.seo.title %></title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18384398796"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18384398796');
+    </script>
   </head>
   <body>
     <noscript>
