@@ -157,7 +157,7 @@ async function onSubmit() {
 <template>
   <section class="reserve">
     <div class="reserve__inner">
-      <h2 class="reserve__title">Reserve agora, e venha celebrar!</h2>
+      <h2 class="reserve__title">Faça um orçamento!</h2>
 
       <form class="reserve__form" @submit.prevent="onSubmit">
         <label class="field">
