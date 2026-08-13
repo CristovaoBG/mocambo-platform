@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES2022",
     "module": "esnext",
     "baseUrl": "./",
     "moduleResolution": "node",
@@ -15,5 +15,10 @@
       "dom.iterable",
       "scripthost"
     ]
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "functions"
+  ]
 }
