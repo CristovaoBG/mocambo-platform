@@ -99,21 +99,15 @@ async function sendContactEmail(env, payload) {
     throw err
   }
 
-  const dateLabel = payload.hasDate ? 'Data' : 'Data aproximada'
-  const text = [
-    'Nova solicitação de reserva — Espaço Mocambo',
-    '',
-    `Nome: ${payload.name}`,
-    `WhatsApp do cliente: ${payload.whatsapp}`,
-    `Tem data definida: ${payload.hasDate ? 'sim' : 'não'}`,
-    `${dateLabel}: ${payload.date}`,
-    `Quantidade de convidados: ${payload.guests}`,
-    `Tipo de evento: ${payload.eventType}`,
-    businessWhatsapp ? '' : null,
-    businessWhatsapp ? `WhatsApp Mocambo: ${businessWhatsapp}` : null,
-  ]
-    .filter((line) => line !== null)
-    .join('\n')
+  const emailBody = JSON.stringify(
+    {
+      source: 'espaco-mocambo-reserva',
+      ...payload,
+      ...(businessWhatsapp ? { businessWhatsapp } : {}),
+    },
+    null,
+    2
+  )
 
   const response = await fetch('https://api.resend.com/emails', {
     method: 'POST',
@@ -125,7 +119,7 @@ async function sendContactEmail(env, payload) {
       from: `Espaço Mocambo <${fromEmail}>`,
       to: [toEmail],
       subject: `Reserva — ${payload.name} (${payload.eventType})`,
-      text,
+      text: emailBody,
     }),
   })
 
