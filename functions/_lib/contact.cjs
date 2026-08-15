@@ -103,6 +103,7 @@ async function sendContactEmail(env, payload) {
     {
       source: 'espaco-mocambo-reserva',
       ...payload,
+      date: `${payload.date}T00:00:00.000Z`,
       ...(businessWhatsapp ? { businessWhatsapp } : {}),
     },
     null,
