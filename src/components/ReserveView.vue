@@ -159,7 +159,8 @@ async function onSubmit() {
     <div class="reserve__inner">
       <h2 class="reserve__title">Faça um orçamento!</h2>
 
-      <form class="reserve__form" @submit.prevent="onSubmit">
+      <Transition name="reserve-swap" mode="out-in">
+      <form v-if="status !== 'success'" key="form" class="reserve__form" @submit.prevent="onSubmit">
         <label class="field">
           <span class="field__label">Seu nome</span>
           <input
@@ -245,10 +246,7 @@ async function onSubmit() {
           </select>
         </label>
 
-        <p v-if="status === 'success'" class="reserve__feedback reserve__feedback--ok">
-          Recebemos seu pedido. Em breve entraremos em contato!
-        </p>
-        <p v-else-if="status === 'error'" class="reserve__feedback reserve__feedback--error">
+        <p v-if="status === 'error'" class="reserve__feedback reserve__feedback--error">
           {{ errorMessage }}
         </p>
 
@@ -256,6 +254,11 @@ async function onSubmit() {
           {{ status === 'loading' ? 'Enviando…' : 'Enviar' }}
         </button>
       </form>
+
+      <p v-else key="success" class="reserve__feedback reserve__feedback--ok">
+        Recebemos seu pedido. Em breve entraremos em contato!
+      </p>
+      </Transition>
     </div>
   </section>
 </template>
@@ -379,6 +382,17 @@ async function onSubmit() {
 
 .reserve__feedback--ok {
   color: var(--verde);
+}
+
+.reserve-swap-enter-active,
+.reserve-swap-leave-active {
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.reserve-swap-enter-from,
+.reserve-swap-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
 }
 
 .reserve__feedback--error {
