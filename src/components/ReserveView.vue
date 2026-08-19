@@ -17,11 +17,11 @@ const form = reactive({
 })
 
 const eventTypes = [
-  'casamento',
-  'festa infantil',
-  'festa de debutante',
-  'confraternização de empresa',
-  'outro',
+  'Casamento',
+  'Festa infantil',
+  'Festa de debutante',
+  'Confraternização de empresa',
+  'Outro',
 ]
 
 const status = ref('idle')

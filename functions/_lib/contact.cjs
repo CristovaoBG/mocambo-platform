@@ -1,9 +1,9 @@
 const EVENT_TYPES = [
-  'casamento',
-  'festa infantil',
-  'festa de debutante',
-  'confraternização de empresa',
-  'outro',
+  'Casamento',
+  'Festa infantil',
+  'Festa de debutante',
+  'Confraternização de empresa',
+  'Outro',
 ]
 
 const WHATSAPP_ERROR =
