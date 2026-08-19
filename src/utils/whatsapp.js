@@ -1,5 +1,5 @@
 const WHATSAPP_ERROR =
-  'Informe um WhatsApp válido com DDD (ex.: 61 99811-2533).'
+  'Informe um WhatsApp válido com DDD (ex.: 61 98765-4321).'
 
 function digitsOnly(value) {
   return String(value || '').replace(/\D/g, '')

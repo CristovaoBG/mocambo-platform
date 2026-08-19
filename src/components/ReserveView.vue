@@ -183,7 +183,7 @@ async function onSubmit() {
             name="whatsapp"
             autocomplete="tel"
             inputmode="tel"
-            placeholder="(61) 99811-2533"
+            placeholder="(61) 98765-4321"
             required
             @blur="checkWhatsapp"
             @input="whatsappError && checkWhatsapp()"
