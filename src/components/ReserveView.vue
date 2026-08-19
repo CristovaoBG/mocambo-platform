@@ -382,6 +382,7 @@ async function onSubmit() {
 
 .reserve__feedback--ok {
   color: var(--verde);
+  text-align: center;
 }
 
 .reserve-swap-enter-active,
