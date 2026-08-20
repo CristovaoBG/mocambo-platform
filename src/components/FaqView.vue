@@ -97,7 +97,7 @@ const items = [
   },
   {
     question: 'Como faço um orçamento?',
-    answer: 'Para fazermos o seu orçamento, por favor, informe: data do evento; o que pretende comemorar; número de convidados via WhatsApp.',
+    answer: 'Para fazer o orçamento é só preencher o formulário abaixo que a gente logo te envia uma mensagem por whatsapp com os valores.',
   },
 ].map((item) => ({
   question: item.question,
