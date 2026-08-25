@@ -18,6 +18,7 @@ const form = reactive({
 
 const eventTypes = [
   'Casamento',
+  'Aniversário',
   'Festa infantil',
   'Festa de debutante',
   'Confraternização de empresa',
