@@ -1,5 +1,6 @@
 const EVENT_TYPES = [
   'Casamento',
+  'Aniversário',
   'Festa infantil',
   'Festa de debutante',
   'Confraternização de empresa',
