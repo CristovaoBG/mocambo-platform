@@ -86,6 +86,21 @@ function validateContact(data) {
   }
 }
 
+function toAsciiJson(value) {
+  return JSON.stringify(value, null, 2).replace(/[^\x00-\x7F]/g, (char) => {
+    const code = char.codePointAt(0)
+    if (code > 0xffff) {
+      const offset = code - 0x10000
+      const high = 0xd800 + (offset >> 10)
+      const low = 0xdc00 + (offset & 0x3ff)
+      return `\\u${high.toString(16).padStart(4, '0')}\\u${low
+        .toString(16)
+        .padStart(4, '0')}`
+    }
+    return `\\u${code.toString(16).padStart(4, '0')}`
+  })
+}
+
 async function sendContactEmail(env, payload) {
   const apiKey = env.RESEND_API_KEY
   const toEmail = env.EMAIL
@@ -100,16 +115,12 @@ async function sendContactEmail(env, payload) {
     throw err
   }
 
-  const emailBody = JSON.stringify(
-    {
-      source: 'espaco-mocambo-reserva',
-      ...payload,
-      date: `${payload.date}T00:00:00.000Z`,
-      ...(businessWhatsapp ? { businessWhatsapp } : {}),
-    },
-    null,
-    2
-  )
+  const emailBody = toAsciiJson({
+    source: 'espaco-mocambo-reserva',
+    ...payload,
+    date: `${payload.date}T00:00:00.000Z`,
+    ...(businessWhatsapp ? { businessWhatsapp } : {}),
+  })
 
   const response = await fetch('https://api.resend.com/emails', {
     method: 'POST',
