@@ -138,6 +138,10 @@ async function onSubmit() {
       throw new Error(data.error || 'Não foi possível enviar. Tente novamente.')
     }
 
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'Lead')
+    }
+
     status.value = 'success'
     form.name = ''
     form.whatsapp = ''
